@@ -6,7 +6,7 @@ import { AddPersonComponent } from './components/add-person/add-person.component
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'tutorials', pathMatch: 'full' },
+  { path: '', redirectTo: 'people', pathMatch: 'full' },
   { path: 'person-list', component: PersonListComponent },
   { path: 'person/:id', component: PersonDetailComponent },
   { path: 'add', component: AddPersonComponent }
