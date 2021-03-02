@@ -8,7 +8,7 @@ import { AddPersonComponent } from './components/add-person/add-person.component
 const routes: Routes = [
   { path: '', redirectTo: 'people', pathMatch: 'full' },
   { path: 'person-list', component: PersonListComponent },
-  { path: 'person/:id', component: PersonDetailComponent },
+  { path: 'person/:documentNumber', component: PersonDetailComponent },
   { path: 'add', component: AddPersonComponent }
 ];
 
