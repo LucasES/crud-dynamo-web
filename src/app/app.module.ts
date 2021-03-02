@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { AddPersonComponent } from './components/add-person/add-person.component';
 import { PersonDetailComponent } from './components/person-detail/person-detail.component';
 import { PersonListComponent } from './components/person-list/person-list.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddPersonComponent,
     PersonDetailComponent,
-    PersonListComponent
+    PersonListComponent,
+    FormsModule,
+    HttpClientModule
   ],
   imports: [
     BrowserModule,
