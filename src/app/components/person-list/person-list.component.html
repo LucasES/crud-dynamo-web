@@ -1,1 +1,63 @@
-<p>person-list works!</p>
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by document number"
+          [(ngModel)]="documentNumber"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchByDocumentNumber()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>People List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let people of peopleList; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActivePerson(people, i)"
+        >
+          {{ people.firstName }} {{ people.lastName }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentPerson">
+        <h4>Person</h4>
+        <div>
+          <label><strong>Name:</strong></label> {{ currentPerson.firstName }} {{ currentPerson.lastName }}
+        </div>
+        <div>
+          <label><strong>Age:</strong></label>
+          {{ currentPerson.age }}
+        </div>
+        <div>
+          <label><strong>Document number:</strong></label>
+          {{ currentPerson.documentNumber}}
+        </div>
+        <div>
+            <label><strong>Gender:</strong></label>
+            {{ currentPerson.gender}}
+        </div>
+        <div>
+        <a class="badge badge-warning" routerLink="/person/{{ currentPerson.id }}">
+          Edit
+        </a>
+      </div>
+  
+      <div *ngIf="!currentPerson">
+        <br />
+        <p>Please click on a Person...</p>
+      </div>
+    </div>
+  </div>

@@ -3,7 +3,6 @@ import { Person } from 'src/app/models/person.model';
 import { PersonService } from 'src/app/services/person.service';
 import { FormArray, FormControl, ValidatorFn } from '@angular/forms';
 
-
 @Component({
   selector: 'app-add-person',
   templateUrl: './add-person.component.html',
@@ -25,8 +24,6 @@ export class AddPersonComponent implements OnInit {
     { value: 'MALE', label: 'Male' },
     { value: 'FEMALE', label: 'Female' }
   ];
-
-  selectedValue = null;
 
   constructor(private personService: PersonService) { }
 
