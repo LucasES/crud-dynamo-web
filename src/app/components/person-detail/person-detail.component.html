@@ -1,1 +1,70 @@
-<p>person-detail works!</p>
+<div>
+    <div *ngIf="currentPerson.id" class="edit-form">
+      <h4>Person</h4>
+      <form>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              required
+              [(ngModel)]="currentPerson.firstName"
+              name="firstName"
+            />
+          </div>
+    
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              class="form-control"
+              id="lastName"
+              required
+              [(ngModel)]="currentPerson.lastName"
+              name="lastName"
+            />
+          </div>
+  
+          <div class="form-group">
+              <label for="documentNumber">Document Number</label>
+              <input
+                class="form-control"
+                id="documentNumber"
+                required
+                [(ngModel)]="currentPerson.documentNumber"
+                name="documentNumber"
+              />
+            </div>
+  
+          <div class="form-group">
+              <label for="age">Age</label>
+              <input
+                type="number"
+                class="form-control"
+                id="age"
+                required
+                [(ngModel)]="currentPerson.age"
+                name="age"
+              />
+            </div>
+      </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deletePerson()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updatePerson()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentPerson.id">
+      <br />
+      <p>Cannot access this Person...</p>
+    </div>
+  </div>
